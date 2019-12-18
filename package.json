@@ -1,0 +1,19 @@
+{
+  "name": "jmcdbackend",
+  "version": "1.0.0",
+  "description": "working on the backend of my aplication",
+  "main": "src/index.js",
+  "repository": "https://github.com/jeseias/meu-site.git",
+  "author": "jeseias domingos",
+  "scripts": {
+    "start": "nodemon"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.8.1",
+    "multer": "^1.4.2"
+  }
+}
