@@ -11,5 +11,6 @@ const AuthController = require('./controllers/AuthController')
 router.post('/register', upload.single('thumbnail'), UserController.store)
 router.post('/authentication', AuthController.store)
 router.patch('/update', upload.single('thumbnail'), UserController.update)
+router.get('/user',  UserController.show)
 
 module.exports = router

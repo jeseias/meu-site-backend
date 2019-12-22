@@ -34,6 +34,12 @@ module.exports = {
     } catch (error) {
       res.status(400).send({ err: error })
     }
+  },
+
+  async show (req, res) {
+    const { userid } = req.headers
+    const user = await User.findOne( {userid} )
+    return res.json(user)
   }
 
 }
