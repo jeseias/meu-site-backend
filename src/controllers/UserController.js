@@ -25,12 +25,14 @@ module.exports = {
   },
 
   async update (req, res) { 
-    const { userid } = req.headers 
-    try { 
-      const user = await User.findOneAndUpdate( userid , req.body) 
-      res.send(user)
+    const { userid } = await req.headers   
+    try {  
+      
+      const user = await User.findByIdAndUpdate( userid, req.body)
+      res.send({user, msg: `User ${user.name} was updated with success`})
+       
     } catch (error) {
-      res.status(400).send({ err: "Unable to update user" })
+      res.status(400).send({ err: error })
     }
   }
 
