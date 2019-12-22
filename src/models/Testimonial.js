@@ -17,6 +17,10 @@ const TesttimonialSchema = new mongoose.Schema({
   saying: {
     type: String,
     required: true
+  },
+  email: {
+    type: String,
+    required: true
   }
 })
 
