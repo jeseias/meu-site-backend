@@ -11,4 +11,4 @@ app.use(express.json())
 // All my routes
 app.use(require('./routes'))
 
-app.listen(2001, console.log('Server running on port 2001'))
+app.listen(2001, () => console.log('Server already running on port 2001'))

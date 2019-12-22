@@ -16,6 +16,14 @@ const UserSchema = new mongoose.Schema({
     required: true,
     select: false
   },
+  location: String,
+  info1: String,
+  info2: String,
+  projectos: String,
+  experience: {
+    type: String,
+    default: new Date().getFullYear() - 2017
+  }
 }, {
   toJSON: {
     virtuals: true

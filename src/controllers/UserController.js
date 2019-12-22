@@ -22,6 +22,24 @@ module.exports = {
     } catch (error) {
       return res.status(400).send({ error: 'Error registration failed' })
     }
+  },
+
+  async update (req, res) { 
+    const { userid } = await req.headers   
+    try {  
+      
+      const user = await User.findByIdAndUpdate( userid, req.body)
+      res.send({user, msg: `User ${user.name} was updated with success`})
+       
+    } catch (error) {
+      res.status(400).send({ err: error })
+    }
+  },
+
+  async show (req, res) {
+    const { userid } = req.headers
+    const user = await User.findOne( {userid} )
+    return res.json(user)
   }
 
 }
