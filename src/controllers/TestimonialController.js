@@ -23,6 +23,5 @@ module.exports = {
     } catch (error) {
       return res.status(400).send({ error: 'Error registration this testimonial failed' })
     }
-  }
-
+  }, 
 }
