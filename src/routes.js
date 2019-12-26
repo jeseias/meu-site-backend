@@ -17,6 +17,7 @@ router.get('/user',  UserController.show)
 
 // Work
 router.post('/work', upload.single('thumbnail'), WorkController.store)
+router.get('/works', WorkController.show)
 
 // Message
 router.post('/msg', MsgController.store)
