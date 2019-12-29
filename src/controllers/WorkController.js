@@ -1,18 +1,18 @@
 const Work = require('../models/Work')
 
 module.exports = {
-  async show (req, res) {
-    try {
-      const works = Work.find({})
-      return res.send(works)
-    } catch (error) {
-      
-    }
+  async show (req, res) { 
+    Work.find({}, function (err, works) {
+      res.send(works);
+    }); 
   },
 
   async store (req, res) {
-    try {
+    const { filename } = req.file
+    try { 
       const work = await Work.create(req.body)
+      work.thumbnail = filename
+      work.save()
       return res.send(work)
     } catch (error) {
       return res.status(400).send({ error })

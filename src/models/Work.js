@@ -5,6 +5,10 @@ const WorkSchema = new mongoose.Schema({
   thumbnail: String,
   type: String,
   link: String
+}, {
+  toJSON: {
+    virtuals: true
+  }
 })
 
 WorkSchema.virtual('thumbnail_url').get(function(){
