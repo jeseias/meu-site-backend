@@ -8,6 +8,8 @@ const UserController = require('./controllers/UserController')
 const AuthController = require('./controllers/AuthController')
 const WorkController = require('./controllers/WorkController')
 const MsgController = require('./controllers/MessageController')
+const TestimonialController = require('./controllers/TestimonialController')
+
 
 // Main user
 router.post('/register', upload.single('thumbnail'), UserController.store)
@@ -21,5 +23,10 @@ router.get('/works', WorkController.show )
 
 // Message
 router.post('/msg', MsgController.store)
+router.get('/msg', MsgController.show)
+router.get('/msg/:id', MsgController.index)
+
+// Clients
+router.post('/clients', TestimonialController.store)
 
 module.exports = router
