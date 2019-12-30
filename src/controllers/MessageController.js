@@ -2,7 +2,7 @@ const Message = require('../models/Message')
 
 module.exports = {
   async store (req, res) {
-    try {
+    try { 
       const msg = await Message.create(req.body)
       return res.send(msg)
     } catch (error) {
