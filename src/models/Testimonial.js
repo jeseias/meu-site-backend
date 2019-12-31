@@ -22,6 +22,10 @@ const TesttimonialSchema = new mongoose.Schema({
     type: String,
     required: true
   }
+}, {
+  toJSON: {
+    virtuals: true
+  }
 })
 
 TesttimonialSchema.virtual('thumbnail_url').get(function(){
