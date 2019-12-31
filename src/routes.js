@@ -27,6 +27,7 @@ router.get('/msg', MsgController.show)
 router.get('/msg/:id', MsgController.index)
 
 // Clients
-router.post('/clients', TestimonialController.store)
+router.post('/clients', upload.single('thumbnail'), TestimonialController.store)
+router.get('/clients', TestimonialController.show)
 
 module.exports = router
