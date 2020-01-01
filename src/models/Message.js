@@ -5,7 +5,11 @@ const MessageSchema = new mongoose.Schema({
   email: String,
   tel1: Number,
   tel2: Number,
-  msg: String
+  msg: String,
+  createdAt: {
+    type: Date,
+    default: new Date.now()
+  }
 })
 
 module.exports = mongoose.model('Message', MessageSchema)
