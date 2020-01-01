@@ -11,14 +11,14 @@ module.exports = {
   },
 
   async show (req, res) {
-    Work.find({}, (err, works) => {
-      res.send(works);
-    });
+    Message.find({}, (err, msgs) => {
+      return res.send(msgs)
+    })
   },
   
   async index (req, res) {
     const { _id } = req.params
-    Work.find({ _id : _id }, (err, work) => {
+    Message.find({ _id : _id }, (err, work) => {
       res.send(work)
     })
   }
