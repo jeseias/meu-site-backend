@@ -18,8 +18,8 @@ module.exports = {
   
   async index (req, res) {
     const { _id } = req.params
-    Message.find({ _id : _id }, (err, work) => {
-      res.send(work)
+    Message.findOne( _id, (err, msg) => { 
+      res.send(msg)
     })
   }
 }
