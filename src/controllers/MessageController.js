@@ -24,7 +24,7 @@ module.exports = {
 
   async update (req, res) {
     const { id } = req.params 
-    Message.findOne({id:id}, (err, msg) => {
+    Message.findOne({ _id :id }, (err, msg) => {
       msg.read = true
       msg.save()
       return res.send(msg)
