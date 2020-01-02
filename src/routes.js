@@ -25,6 +25,8 @@ router.get('/works', WorkController.show )
 router.post('/msg', MsgController.store)
 router.get('/msg', MsgController.show)
 router.get('/msg/:id', MsgController.index)
+router.patch('/msg/:id', MsgController.update)
+router.delete('/msg/:id', MsgController.delete)
 
 // Clients
 router.post('/clients', upload.single('thumbnail'), TestimonialController.store)

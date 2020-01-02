@@ -21,5 +21,19 @@ module.exports = {
     Message.findOne( _id, (err, msg) => { 
       res.send(msg)
     })
+  },
+
+  async update (req, res) {
+    const { _id } = req.params
+    Message.findOne( _id, (err, msg) => {
+      msg.read = true
+      msg.save()
+      return res.send(msg)
+    })
+  },
+
+  async delete (req, res) {
+    const { _id } = req.params
+    Message.findOneAndDelete( _id )
   }
 }
