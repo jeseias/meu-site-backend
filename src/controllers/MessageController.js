@@ -17,15 +17,14 @@ module.exports = {
   },
   
   async index (req, res) {
-    const { _id } = req.params
-    Message.findOne( _id, (err, msg) => { 
-      res.send(msg)
-    })
+    const { id } = req.params
+    const msg = await Message.findById( id ) 
+    return res.send(msg)
   },
 
   async update (req, res) {
-    const { _id } = req.params
-    Message.findOne( _id, (err, msg) => {
+    const { id } = req.params
+    Message.findOne( id, (err, msg) => {
       msg.read = true
       msg.save()
       return res.send(msg)
@@ -33,7 +32,7 @@ module.exports = {
   },
 
   async delete (req, res) {
-    const { _id } = req.params
-    Message.findOneAndDelete( _id )
+    const { id } = req.params
+    Message.findOneAndDelete( id )
   }
 }
