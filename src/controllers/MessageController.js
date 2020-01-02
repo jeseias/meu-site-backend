@@ -23,12 +23,12 @@ module.exports = {
   },
 
   async update (req, res) {
-    const { id } = req.params
-    Message.findOne( id, (err, msg) => {
+    const { id } = req.params 
+    Message.findOne({id:id}, (err, msg) => {
       msg.read = true
       msg.save()
       return res.send(msg)
-    })
+    })  
   },
 
   async delete (req, res) {
