@@ -17,5 +17,14 @@ module.exports = {
     } catch (error) {
       return res.status(400).send({ error })
     }
+  },
+  
+  async delete (req, res) {
+    Work.findByIdAndDelete(req.params.id, (err, work) => res.send(work))
+  },
+
+  async update (req, res) {
+    console.log('update reques mande')
+    return res.send({ ok: true })
   }
 }

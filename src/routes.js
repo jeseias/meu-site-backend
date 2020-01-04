@@ -20,6 +20,8 @@ router.get('/user',  UserController.show)
 // Work
 router.post('/work', upload.single('thumbnail'), WorkController.store)
 router.get('/works', WorkController.show )
+router.delete('/works/:id', WorkController.delete )
+router.patch('/works', WorkController.update )
 
 // Message
 router.post('/msg', MsgController.store)
