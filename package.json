@@ -6,7 +6,7 @@
   "repository": "https://github.com/jeseias/meu-site.git",
   "author": "jeseias domingos",
   "scripts": {
-    "start": "nodemon"
+    "start": "node src/index.js"
   },
   "license": "MIT",
   "dependencies": {
