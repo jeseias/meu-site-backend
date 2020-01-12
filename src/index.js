@@ -13,4 +13,4 @@ app.use(express.json())
 app.use(require('./routes'))
 app.use('/files', express.static(path.resolve(__dirname, '..', 'uploads')))
 
-app.listen(2001, () => console.log('Server already running on port 2001'))
+app.listen(process.env.PORT || 2001, () => console.log('Server already running on port 2001'))
