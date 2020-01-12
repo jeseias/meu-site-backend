@@ -11,6 +11,13 @@ const MsgController = require('./controllers/MessageController')
 const TestimonialController = require('./controllers/TestimonialController')
 
 
+router.get('/', (req, res) => {
+  return res.json({ 
+    status: 'success',
+    message: 'Seja bem vindo ao meu site querido amigo'
+  })
+})
+
 // Main user
 router.post('/register', upload.single('thumbnail'), UserController.store)
 router.post('/authentication', AuthController.store)
