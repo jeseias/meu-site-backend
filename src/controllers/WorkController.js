@@ -7,6 +7,11 @@ module.exports = {
     }); 
   },
 
+  async index (req, res) { 
+    const work = await Work.findById( req.params.id ) 
+    return res.send(work)
+  },
+
   async store (req, res) {
     const { filename } = req.file
     try { 
