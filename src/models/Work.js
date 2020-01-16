@@ -12,7 +12,7 @@ const WorkSchema = new mongoose.Schema({
 })
 
 WorkSchema.virtual('thumbnail_url').get(function(){
-  return `http://localhost:2001/files/${this.thumbnail}`
+  return `https://jmcd.herokuapp/${this.thumbnail}`
 })
 
 module.exports = mongoose.model('Trabalho', WorkSchema)
