@@ -9,10 +9,10 @@ const WorkSchema = new mongoose.Schema({
   toJSON: {
     virtuals: true
   }
-})
+}) 
 
 WorkSchema.virtual('thumbnail_url').get(function(){
-  return `https://jmcd.herokuapp/files/${this.thumbnail}`
+  return `https://jmcd.herokuapp.com/files/${this.thumbnail}`
 })
 
 module.exports = mongoose.model('Trabalho', WorkSchema)

@@ -6,11 +6,13 @@
   "repository": "https://github.com/jeseias/meu-site.git",
   "author": "jeseias domingos",
   "scripts": {
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
   },
   "license": "MIT",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "cloudinary": "^1.18.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "mongoose": "^5.8.1",
