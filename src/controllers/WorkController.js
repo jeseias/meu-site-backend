@@ -14,6 +14,7 @@ module.exports = {
 
   async store (req, res) {  
     const {filename} = req.file
+    console.log(req.file)
     try { 
       const work = await Work.create(req.body)
       work.thumbnail = filename
