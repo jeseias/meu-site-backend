@@ -1,7 +1,6 @@
 const router = require('express').Router()
 const multer = require('multer')
-const uploadConfig = require('./config/upload') 
-const cloudinary = require('./config/cloudinary')
+const uploadConfig = require('./config/upload')  
 
 const upload = multer(uploadConfig)
 
